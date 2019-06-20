@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Gallery - To remove</h1>
+    
+        
+    <div class="container my-5">
+        <form class="form-inline d-flex justify-content-between">
+            
+            <div class="form-group">
+                <label for="breedFilter">Search</label>
+                <input type="text" class="form-control" id="breedFilter" ng-model="query" placeholder="Serch for Breeds">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-light" ng-click="refresh()">Update Images</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <h4 class="text-danger" ng-show="filteredBreeds.length == 0">No breeds found for the filter</h4>
+            <div class="col-md-4 col-sm-6 mb-5" ng-repeat="breed in filteredBreeds = (breeds | filter:query) "> 
+        
+            <div>
+                <img class="card-img-top" ng-src="{{ breed.image }}"  alt="Card image">
+                <div class="card-body">
+                    <a ng-href="{{ breed.image }}">{{ breed.name }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
