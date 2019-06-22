@@ -17,14 +17,16 @@
         <h4 class="text-danger" ng-show="filteredBreeds.length == 0">No breeds found for the filter</h4>
         <div class="col-md-4 col-sm-6 mb-5" ng-repeat="breed in filteredBreeds = (breeds | filter:filterQuery) "> 
     
-            <div class="card">
-                <div class="thumb-post">
-                    <a ng-href="#!/breed/{{ breed.name }}">
-                        <img class="card-img-top" ng-src="{{ breed.image }}"  alt="Card image">
-                    </a>
+            <div class="card bg-light">
+                <div class="card-title">
+                    <a ng-href="{{ breed.image }}" target="_blank"><h6 class="text-center">{{ breed.name }}</h6></a>
                 </div>
                 <div class="card-body">
-                    <a ng-href="{{ breed.image }}" target="_blank">{{ breed.name }}</a>
+                    <div class="thumb-post">
+                        <a ng-href="#!/breed/{{ breed.name }}">
+                            <img class="card-img-top" ng-src="{{ breed.image }}"  alt="Card image">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
