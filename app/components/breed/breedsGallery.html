@@ -1,18 +1,21 @@
+
 <div class="container">
-    <h1>Gallery for Breed {{ name}}- To remove</h1>
+    <dog-navbar></dog-navbar>
+    <h1>{{ name}}</h1>
     
         
     
     <div class="row">
         <h4 class="text-danger" ng-show="filteredBreeds.length == 0">No breeds found for the filter</h4>
-            <div class="col-md-4 col-sm-6 mb-5" ng-repeat="breed in breeds "> 
+            <div class="col-md-4 col-sm-6 mb-5" ng-repeat="image in breedImgArr "> 
         
-            <div>
-                <img class="card-img-top" ng-src="{{ breed.image }}"  alt="Card image">
-                <div class="card-body">
-                    <a ng-href="{{ breed.image }}">{{ breed.name }}</a>
+            <!--<div class="card"> -->
+                <div class="thumb-post">
+                    <a class="thumbnail" ng-href="{{image}}" target="_blank">
+                        <img class="card-img-center img-thumbnail" ng-src="{{ image }}"  alt="Card image">
+                    </a>
                 </div>
-            </div>
+            <!--</div> -->
         </div>
     </div>
 

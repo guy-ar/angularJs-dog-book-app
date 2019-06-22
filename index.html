@@ -13,6 +13,7 @@
         <script src="https://code.angularjs.org/1.7.8/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.js"></script>
         <script src="app/app.js"></script>
+        <script src="app/shared/menuDir.js"></script>
         <script src="app/components/home/homeCtrl.js"></script>
         <script src="app/components/breed/breedSrv.js"></script>
         <script src="app/components/breed/breedsListCtrl.js"></script>
@@ -21,22 +22,7 @@
     </head>
 
 
-    <body >
-    
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">My Dogs</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="#!/breeds">Breeds</a>
-                    <a class="nav-item nav-link" href="#!/about">About</a>
-                </div>
-            </div>
-            
-        </nav>
-
+    <body>
         <ng-view></ng-view>
     </body>
 </html>

@@ -13,8 +13,19 @@ app.controller("breedsListCtrl", function($scope, $log, $location, breedSrv) {
 
     $scope.query = "";
     
+    $scope.filterQuery = function(breed) {
+       $log.info("breed.name:" + breed.name);
+      let nameUpper = breed.name.toUpperCase();
+            
+      if (nameUpper.includes($scope.query.toUpperCase())) {
+          return true;
+      } else {
+        return false;
+      }
+    }
+
     $scope.refresh = function() {
-      $location.path("/breeds");
+      breedSrv.refreshBreeds();
     }
     
     

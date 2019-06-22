@@ -1,24 +1,13 @@
-app.controller("breedGalleryCtrl", function($scope, $log, $location, breedSrv) {
+app.controller("breedGalleryCtrl", function($scope, $log, $routeParams, breedSrv) {
     
     // initiate the data
-    $scope.breeds = [];
-    
-    
-    breedSrv.getBreeds().then(function(breeds) {
-      $scope.breeds = breeds;
+    $scope.breedImgArr = [];
+    $scope.name = $routeParams.name;
+   
+    breedSrv.getImgForBreed($routeParams.name).then(function(imgArr) {
+      $scope.breedImgArr = imgArr;
     }, function(err) {
       $log.error(err);
     })
-     
 
-    $scope.query = "";
-    
-    $scope.refresh = function() {
-      $location.path("/breeds");
-    }
-    
-    
-    $scope.selectedBreed = null;
-    
-    
   });
