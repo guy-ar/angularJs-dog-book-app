@@ -11,12 +11,43 @@
         
             <!--<div class="card"> -->
                 <div class="thumb-post">
-                    <a class="thumbnail" ng-href="{{image}}" target="_blank">
-                        <img class="card-img-center img-thumbnail" ng-src="{{ image }}"  alt="Card image">
-                    </a>
+                    <!-- Hide the link tag - instead activate script-->
+                    <!--<a class="thumbnail" ng-href="{{image}}" target="_blank">-->
+                        <img class="card-img-center img-thumbnail" ng-src="{{ image }}"  alt="Card image" ng-click="selectImage(image);">
+                    <!--</a> -->
                 </div>
             <!--</div> -->
         </div>
     </div>
 
+    <!-- Button to Open the Modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Open modal
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+    <!-- <div class="modal " id="myModal"> -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <img class="img-fluid" ng-src="{{ selectedImg }}"  alt="Card image">
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
